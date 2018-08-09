@@ -21,11 +21,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let urlImg = URL(string: products[indexPath.item].image_uri!)
             cell.image.kf.setImage(with: urlImg, options: [.forceRefresh])
         }
-        if(indexPath.item == 0){
-            cell.name.text = "One line"
-        }else{
-            cell.name.text = products[indexPath.item].name
-        }
+        
+        cell.name.text = products[indexPath.item].name
         cell.price.text = products[indexPath.item].price
         
         return cell
