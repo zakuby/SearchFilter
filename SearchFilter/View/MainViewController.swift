@@ -22,10 +22,14 @@ class MainViewController: UIViewController {
     
     var products = [Product]()
     
+    @IBAction func filterPressed(_ sender: Any) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         rotateView(targetView: loadingImage)
+        
         
         productList.showsVerticalScrollIndicator = false
         productList.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductCollectionViewCell")
@@ -33,13 +37,17 @@ class MainViewController: UIViewController {
         productList.delegate = self
         productList.dataSource = self
         self.page = 0
+        LoadingOverlay.shared.showOverlay()
         loadList()
     }
     
     func loadList(){
         APIHandler().getProduct(offset: self.limit * self.page, limit: self.limit) { (resp) in
-            
-            self.loadingImage.isHidden = true
+            if self.page == 0{
+                LoadingOverlay.shared.hideOverlay()
+            }else{
+                self.loadingImage.isHidden = true
+            }
             self.contentIsLoading = false
             self.page += 1
             if let products = Mapper<Product>().mapArray(JSONObject: resp.data?.arrayObject){
