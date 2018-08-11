@@ -344,7 +344,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
                                 <state key="normal" image="right-chevron"/>
                                 <connections>
-                                    <action selector="shopType:" destination="wav-f0-bme" eventType="touchUpInside" id="uYp-fI-WXl"/>
+                                    <action selector="filterTapped:" destination="wav-f0-bme" eventType="touchUpInside" id="zf8-tL-gec"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agl-Sz-Kx6">

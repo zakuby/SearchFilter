@@ -41,8 +41,6 @@ class ShopTypeViewController: UIViewController {
     }
     
     
-    var filterTypeApplied : (([String]) -> ())?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

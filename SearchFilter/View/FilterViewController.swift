@@ -42,16 +42,8 @@ class FilterViewController: UIViewController, RangeSeekSliderDelegate {
         dismiss(animated: true)
     }
     
-    @IBAction func shopType(_ sender: Any){
-        openShopType { (categoryFiltered) in
-            self.category.removeAll()
-        }
-        
-    }
-    
-    func openShopType(filterTypeApplied:@escaping ([String])->()){
+    @IBAction func filterTapped(_ sender: Any){
         let pvc : ShopTypeViewController = ShopTypeViewController(nibName: "ShopTypeViewController", bundle: nil)
-        pvc.filterTypeApplied = filterTypeApplied
         show(pvc, sender: self)
     }
     
