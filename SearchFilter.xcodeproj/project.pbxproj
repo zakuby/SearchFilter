@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		62EAEC2E6D2C42406D025874 /* Pods_SearchFilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E0BC97BE3D33B440064F7C /* Pods_SearchFilter.framework */; };
+		84259615211E6B8C00BCAA81 /* ShopTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84259613211E6B8C00BCAA81 /* ShopTypeViewController.swift */; };
+		84259616211E6B8C00BCAA81 /* ShopTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84259614211E6B8C00BCAA81 /* ShopTypeViewController.xib */; };
+		84259618211E709100BCAA81 /* ShopTypeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84259617211E709100BCAA81 /* ShopTypeTableView.swift */; };
+		8425961B211E71D400BCAA81 /* ShopCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84259619211E71D400BCAA81 /* ShopCategoryTableViewCell.swift */; };
+		8425961C211E71D400BCAA81 /* ShopCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8425961A211E71D400BCAA81 /* ShopCategoryTableViewCell.xib */; };
 		84359374211BD0B50054F28D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84359372211BD0B50054F28D /* WebViewController.swift */; };
 		84359375211BD0B50054F28D /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84359373211BD0B50054F28D /* WebViewController.xib */; };
 		84359378211BD1630054F28D /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84359377211BD1630054F28D /* Overlay.swift */; };
@@ -32,6 +37,11 @@
 /* Begin PBXFileReference section */
 		115B50D1957F9D917CBBE776 /* Pods-SearchFilter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchFilter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SearchFilter/Pods-SearchFilter.debug.xcconfig"; sourceTree = "<group>"; };
 		82E0BC97BE3D33B440064F7C /* Pods_SearchFilter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchFilter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84259613211E6B8C00BCAA81 /* ShopTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTypeViewController.swift; sourceTree = "<group>"; };
+		84259614211E6B8C00BCAA81 /* ShopTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopTypeViewController.xib; sourceTree = "<group>"; };
+		84259617211E709100BCAA81 /* ShopTypeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTypeTableView.swift; sourceTree = "<group>"; };
+		84259619211E71D400BCAA81 /* ShopCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		8425961A211E71D400BCAA81 /* ShopCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopCategoryTableViewCell.xib; sourceTree = "<group>"; };
 		84359372211BD0B50054F28D /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		84359373211BD0B50054F28D /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		84359377211BD1630054F28D /* Overlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
@@ -68,6 +78,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84259612211E6B7000BCAA81 /* Shop Type */ = {
+			isa = PBXGroup;
+			children = (
+				84259613211E6B8C00BCAA81 /* ShopTypeViewController.swift */,
+				84259614211E6B8C00BCAA81 /* ShopTypeViewController.xib */,
+				84259617211E709100BCAA81 /* ShopTypeTableView.swift */,
+				84259619211E71D400BCAA81 /* ShopCategoryTableViewCell.swift */,
+				8425961A211E71D400BCAA81 /* ShopCategoryTableViewCell.xib */,
+			);
+			path = "Shop Type";
+			sourceTree = "<group>";
+		};
 		84359371211BD0A30054F28D /* WebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +191,7 @@
 		84AF5F5F211B166E00371C78 /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				84259612211E6B7000BCAA81 /* Shop Type */,
 				84359379211BE8850054F28D /* Filter */,
 				848C9713211B1FD600DEC981 /* ProductCollectionView.swift */,
 				84AF5F60211B168F00371C78 /* ProductCollectionViewCell.swift */,
@@ -255,11 +278,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A44F2B211B022800980BF3 /* LaunchScreen.storyboard in Resources */,
+				8425961C211E71D400BCAA81 /* ShopCategoryTableViewCell.xib in Resources */,
 				84A44F28211B022800980BF3 /* Assets.xcassets in Resources */,
 				84AF5F63211B168F00371C78 /* ProductCollectionViewCell.xib in Resources */,
 				84359375211BD0B50054F28D /* WebViewController.xib in Resources */,
 				8435937D211BE89B0054F28D /* FilterCategoryCollectionViewCell.xib in Resources */,
 				84A44F26211B022500980BF3 /* Main.storyboard in Resources */,
+				84259616211E6B8C00BCAA81 /* ShopTypeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,14 +346,17 @@
 			files = (
 				84EB23DD211C3E8A009D5422 /* FilterCategoryCollectionView.swift in Sources */,
 				8435937C211BE89B0054F28D /* FilterCategoryCollectionViewCell.swift in Sources */,
+				84259618211E709100BCAA81 /* ShopTypeTableView.swift in Sources */,
 				84A44F23211B022500980BF3 /* MainViewController.swift in Sources */,
 				84AF5F62211B168F00371C78 /* ProductCollectionViewCell.swift in Sources */,
+				8425961B211E71D400BCAA81 /* ShopCategoryTableViewCell.swift in Sources */,
 				84359378211BD1630054F28D /* Overlay.swift in Sources */,
 				848C9716211B2C2C00DEC981 /* Product.swift in Sources */,
 				84EB23DB211C3BCD009D5422 /* FilterViewController.swift in Sources */,
 				848C9718211B2DDD00DEC981 /* APIHandler.swift in Sources */,
 				84359374211BD0B50054F28D /* WebViewController.swift in Sources */,
 				84E74356211C8EDB003228F8 /* Extension.swift in Sources */,
+				84259615211E6B8C00BCAA81 /* ShopTypeViewController.swift in Sources */,
 				84A44F21211B022500980BF3 /* AppDelegate.swift in Sources */,
 				848C9714211B1FD600DEC981 /* ProductCollectionView.swift in Sources */,
 				849CDDA0211BEABE00DCE1DC /* ProductService.swift in Sources */,

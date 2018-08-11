@@ -58,7 +58,6 @@
                                 </state>
                                 <connections>
                                     <action selector="filterPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xTe-7N-0SK"/>
-                                    <segue destination="wav-f0-bme" kind="show" id="c2W-co-mIm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -89,7 +88,7 @@
         <!--Filter View Controller-->
         <scene sceneID="sly-tA-vG1">
             <objects>
-                <viewController id="wav-f0-bme" customClass="FilterViewController" customModule="SearchFilter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FilterViewController" id="wav-f0-bme" customClass="FilterViewController" customModule="SearchFilter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BAn-Cd-xdi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,6 +103,9 @@
                                             <constraint firstAttribute="height" constant="24" id="dRM-1G-SVa"/>
                                         </constraints>
                                         <state key="normal" image="close"/>
+                                        <connections>
+                                            <action selector="closeTapped:" destination="wav-f0-bme" eventType="touchUpInside" id="EWl-Wh-FzB"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGd-hZ-wyf">
                                         <rect key="frame" x="44" y="10" width="38.5" height="21"/>
@@ -117,6 +119,9 @@
                                         <state key="normal" title="Reset">
                                             <color key="titleColor" red="0.23463272741794078" green="0.59039895302030454" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="resetTapped:" destination="wav-f0-bme" eventType="touchUpInside" id="mtY-ON-GOT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -286,7 +291,7 @@
                                 <rect key="frame" x="318" y="194" width="51" height="31"/>
                             </switch>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t3n-4J-DgT">
-                                <rect key="frame" x="0.0" y="245" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="283" width="375" height="55"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="T3h-Sn-pap"/>
@@ -316,6 +321,30 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2R-Bh-9lk">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <color key="backgroundColor" red="0.14103208349999999" green="0.65872858499999998" blue="0.1242237677" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WeX-AH-JXN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Apply">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="applyTapped:" destination="wav-f0-bme" eventType="touchUpInside" id="9Nj-IV-CoR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyY-BS-AJW">
+                                <rect key="frame" x="321" y="243" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aFX-4E-xGI"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="shopType:" destination="wav-f0-bme" eventType="touchUpInside" id="uYp-fI-WXl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -326,19 +355,24 @@
                             <constraint firstItem="jkB-e8-Pil" firstAttribute="leading" secondItem="yfN-a6-YM4" secondAttribute="leading" id="C1r-Nv-U0z"/>
                             <constraint firstItem="jkB-e8-Pil" firstAttribute="top" secondItem="LT8-Ja-0JG" secondAttribute="top" constant="-10" id="C3B-vC-XNI"/>
                             <constraint firstItem="yfN-a6-YM4" firstAttribute="trailing" secondItem="Ei5-vH-ls5" secondAttribute="trailing" constant="10" id="GCQ-LK-Odc"/>
+                            <constraint firstItem="hyY-BS-AJW" firstAttribute="top" secondItem="jkB-e8-Pil" secondAttribute="bottom" constant="8" id="HM1-w4-6c5"/>
                             <constraint firstItem="yfN-a6-YM4" firstAttribute="trailing" secondItem="jkB-e8-Pil" secondAttribute="trailing" id="HUK-hq-cQs"/>
                             <constraint firstItem="yfN-a6-YM4" firstAttribute="trailing" secondItem="kTZ-S0-V98" secondAttribute="trailing" id="NSJ-cc-mbA"/>
                             <constraint firstItem="kTZ-S0-V98" firstAttribute="top" secondItem="yfN-a6-YM4" secondAttribute="top" id="U0o-zN-UTK"/>
                             <constraint firstItem="yfN-a6-YM4" firstAttribute="trailing" secondItem="nCR-w8-Z4y" secondAttribute="trailing" constant="8" id="UF9-Xf-S2R"/>
                             <constraint firstItem="LT8-Ja-0JG" firstAttribute="top" secondItem="kTZ-S0-V98" secondAttribute="bottom" constant="18" id="Yoz-YN-9mr"/>
+                            <constraint firstItem="yfN-a6-YM4" firstAttribute="trailing" secondItem="a2R-Bh-9lk" secondAttribute="trailing" id="ZPy-PD-gFZ"/>
+                            <constraint firstItem="a2R-Bh-9lk" firstAttribute="leading" secondItem="BAn-Cd-xdi" secondAttribute="leading" id="aqC-0Z-FmM"/>
+                            <constraint firstItem="t3n-4J-DgT" firstAttribute="top" secondItem="hyY-BS-AJW" secondAttribute="bottom" constant="10" id="f2h-DK-kDj"/>
                             <constraint firstItem="Ajp-lP-xNY" firstAttribute="top" secondItem="Ei5-vH-ls5" secondAttribute="bottom" constant="8" id="hGO-rN-lfD"/>
                             <constraint firstItem="Ei5-vH-ls5" firstAttribute="leading" secondItem="yfN-a6-YM4" secondAttribute="leading" constant="10" id="iIt-G3-L0o"/>
                             <constraint firstItem="nCR-w8-Z4y" firstAttribute="centerY" secondItem="Ajp-lP-xNY" secondAttribute="centerY" id="iJZ-ZZ-hUb"/>
+                            <constraint firstItem="yfN-a6-YM4" firstAttribute="bottom" secondItem="a2R-Bh-9lk" secondAttribute="bottom" id="kOS-gP-eOh"/>
                             <constraint firstItem="t3n-4J-DgT" firstAttribute="leading" secondItem="yfN-a6-YM4" secondAttribute="leading" id="ktI-dM-Gi9"/>
                             <constraint firstItem="yfN-a6-YM4" firstAttribute="trailing" secondItem="t3n-4J-DgT" secondAttribute="trailing" id="pNa-S5-rQE"/>
                             <constraint firstItem="Ei5-vH-ls5" firstAttribute="top" secondItem="LT8-Ja-0JG" secondAttribute="bottom" constant="8" id="qQA-BC-hsX"/>
                             <constraint firstItem="kTZ-S0-V98" firstAttribute="leading" secondItem="yfN-a6-YM4" secondAttribute="leading" id="smW-3a-Wfa"/>
-                            <constraint firstItem="t3n-4J-DgT" firstAttribute="top" secondItem="jkB-e8-Pil" secondAttribute="bottom" constant="10" id="wox-Eo-hUr"/>
+                            <constraint firstItem="yfN-a6-YM4" firstAttribute="trailing" secondItem="hyY-BS-AJW" secondAttribute="trailing" constant="8" id="vjG-XE-Xm6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yfN-a6-YM4"/>
                     </view>
@@ -348,6 +382,7 @@
                         <outlet property="maximumPrice" destination="uDV-CX-z08" id="drp-GQ-BG9"/>
                         <outlet property="minimumPrice" destination="NRv-JS-yU4" id="aiJ-eP-eIx"/>
                         <outlet property="rangeSlider" destination="Ei5-vH-ls5" id="k1Y-6G-C9N"/>
+                        <outlet property="wholeSaleSwitcher" destination="nCR-w8-Z4y" id="j4d-XO-ndv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TqQ-pz-HeE" userLabel="First Responder" sceneMemberID="firstResponder"/>

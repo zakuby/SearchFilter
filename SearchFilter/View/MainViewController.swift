@@ -15,21 +15,38 @@ class MainViewController: UIViewController {
 
     @IBOutlet var loadingImage: UIImageView!
     
+    public static var pmin : String? = "100"
+    public static var pmax : String? = "7000000"
+    public static var wholesale : Bool? = true
+    public static var official : Bool? = true
+    public static var fshop : Int? = 2
+    public static var isFilter : Bool? = false
+    
+    public static func resetValue(){
+        MainViewController.pmin = "100"
+        MainViewController.pmax = "7000000"
+        MainViewController.wholesale = true
+        MainViewController.official = true
+        MainViewController.fshop = 2
+        MainViewController.isFilter = false
+    }
+    
     var contentIsLoading = false
     
     var page = 0
-    var limit      = 10
+    var limit = 10
     
     var products = [Product]()
-    
     @IBAction func filterPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "FilterViewController") as! FilterViewController
+        present(vc, animated: true)
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         rotateView(targetView: loadingImage)
-        
         
         productList.showsVerticalScrollIndicator = false
         productList.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductCollectionViewCell")
@@ -41,8 +58,18 @@ class MainViewController: UIViewController {
         loadList()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if MainViewController.isFilter!{
+            self.page = 0
+            LoadingOverlay.shared.showOverlay()
+            self.products = [Product]()
+            loadList()
+        }
+    }
+    
     func loadList(){
-        APIHandler().getProduct(offset: self.limit * self.page, limit: self.limit) { (resp) in
+        let vc = MainViewController.self
+        ProductService().getProduct(offset: self.limit * self.page, limit: self.limit, pmin: vc.pmin!, pmax: vc.pmax!, wholesale: vc.wholesale!, official: vc.official!, fshop: vc.fshop!) { (resp) in
             if self.page == 0{
                 LoadingOverlay.shared.hideOverlay()
             }else{
@@ -56,16 +83,6 @@ class MainViewController: UIViewController {
             }
         }
     }
-    
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        
-//        let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height;
-//        if (bottomEdge >= scrollView.contentSize.height && contentIsLoading == false) {
-//            contentIsLoading = true
-//            self.loadingImage.isHidden = false
-//            self.loadList()
-//        }
-//    }
     
     func rotateView(targetView: UIView, duration: Double = 2.0) {
         UIView.animate(withDuration: duration, delay: 0.0, options: .curveLinear, animations: {
