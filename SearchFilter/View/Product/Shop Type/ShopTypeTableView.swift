@@ -16,19 +16,27 @@ extension ShopTypeViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShopCategoryTableViewCell", for: indexPath) as! ShopCategoryTableViewCell
         
-        cell.name.text = category[indexPath.item]
-        cell.switchView(status: selectedCategory[indexPath.item])
+        cell.name.text = category[indexPath.item].name
+        cell.switchView(status: category[indexPath.item].status)
+        
+        if category[indexPath.item].name == "Gold Merchant"{
+            if category[indexPath.item].status{
+                MainViewController.fshop = 2
+            }else{
+                MainViewController.fshop = 0
+            }
+            
+        }else if category[indexPath.item].name == "Official Store"{
+            MainViewController.official = category[indexPath.item].status
+        }
+        
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedCategory[indexPath.item] = !selectedCategory[indexPath.item]
-        if selectedCategory[indexPath.item]{
-            filteredCategory.append(category[indexPath.item])
-        }else{
-            filteredCategory.filter{ !category[indexPath.item].contains($0)}
-        }
+        category[indexPath.item].status = !category[indexPath.item].status
+        
         categoryList.reloadData()
     }
 }

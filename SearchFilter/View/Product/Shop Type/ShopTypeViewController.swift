@@ -8,27 +8,37 @@
 
 import UIKit
 
+class CategoryType: NSObject{
+    var name: String = ""
+    var status: Bool = false
+    
+    init(name: String, status: Bool) {
+        self.name = name
+        self.status = status
+    }
+}
+
 class ShopTypeViewController: UIViewController {
 
-    var category = ["Gold Merchant", "Official Store"]
+    var category = [CategoryType]()
     var filteredCategory = [String]()
-    var selectedCategory = [false, false]
     
     @IBOutlet weak var categoryList: UITableView!
     
     @IBAction func closeTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func applyPressed(_ sender: Any) {
-        MainViewController.official = filteredCategory.contains("Official Store")
-        if filteredCategory.contains("Gold Merchant"){
-            MainViewController.fshop = 2
-        }else{
-            MainViewController.fshop = 0
-        }
         dismiss(animated: true, completion: nil)
     }
-    @IBOutlet weak var resetTapped: UIButton!
+    
+    @IBAction func resetTapped(_ sender: Any) {
+        for (_, item) in category.enumerated(){
+            item.status = false
+        }
+        categoryList.reloadData()
+    }
     
     
     var filterTypeApplied : (([String]) -> ())?
@@ -41,8 +51,24 @@ class ShopTypeViewController: UIViewController {
         categoryList.separatorStyle = .none
         categoryList.register(UINib(nibName: "ShopCategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "ShopCategoryTableViewCell")
         categoryList.rowHeight = UITableViewAutomaticDimension
-        categoryList.estimatedRowHeight = 50.0
+        categoryList.estimatedRowHeight = 60.0
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        category.removeAll()
+        if MainViewController.official!{
+            category.append(CategoryType(name: "Official Store", status: true))
+        }else{
+            category.append(CategoryType(name: "Official Store", status: false))
+        }
+        
+        if MainViewController.fshop == 2{
+            category.append(CategoryType(name: "Gold Merchant", status: true))
+        }else{
+            category.append(CategoryType(name: "Gold Merchant", status: false))
+        }
+        categoryList.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

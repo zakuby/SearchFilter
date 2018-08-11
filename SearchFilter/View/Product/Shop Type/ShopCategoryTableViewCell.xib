@@ -20,21 +20,21 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxk-Y3-ebU">
-                        <rect key="frame" x="10" y="25" width="25" height="25"/>
+                        <rect key="frame" x="10" y="31.5" width="12.5" height="12.5"/>
                         <color key="backgroundColor" red="0.14103208349999999" green="0.65872858499999998" blue="0.1242237677" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="25" id="M82-4A-mnI"/>
-                            <constraint firstAttribute="width" constant="25" id="p5A-AZ-A7Q"/>
+                            <constraint firstAttribute="height" constant="12" id="M82-4A-mnI"/>
+                            <constraint firstAttribute="width" constant="12" id="p5A-AZ-A7Q"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2do-nB-ow8">
-                        <rect key="frame" x="45" y="27" width="491" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="32.5" y="29.5" width="503.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5t-l8-QQz">
-                        <rect key="frame" x="45" y="73.5" width="501" height="1"/>
+                        <rect key="frame" x="32.5" y="73.5" width="513.5" height="1"/>
                         <color key="backgroundColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="0aY-OW-Dgb"/>

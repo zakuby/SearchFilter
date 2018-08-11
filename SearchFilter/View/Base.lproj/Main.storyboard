@@ -291,7 +291,7 @@
                                 <rect key="frame" x="318" y="194" width="51" height="31"/>
                             </switch>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t3n-4J-DgT">
-                                <rect key="frame" x="0.0" y="283" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="273" width="375" height="55"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="T3h-Sn-pap"/>
@@ -335,26 +335,36 @@
                                     <action selector="applyTapped:" destination="wav-f0-bme" eventType="touchUpInside" id="9Nj-IV-CoR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyY-BS-AJW">
-                                <rect key="frame" x="321" y="243" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyY-BS-AJW">
+                                <rect key="frame" x="0.0" y="243" width="375" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="aFX-4E-xGI"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                <state key="normal" image="right-chevron"/>
                                 <connections>
                                     <action selector="shopType:" destination="wav-f0-bme" eventType="touchUpInside" id="uYp-fI-WXl"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agl-Sz-Kx6">
+                                <rect key="frame" x="8" y="247" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="LT8-Ja-0JG" firstAttribute="leading" secondItem="yfN-a6-YM4" secondAttribute="leading" constant="8" id="0kg-4A-Ntk"/>
+                            <constraint firstItem="agl-Sz-Kx6" firstAttribute="centerY" secondItem="hyY-BS-AJW" secondAttribute="centerY" id="2fM-9I-s1x"/>
                             <constraint firstItem="jkB-e8-Pil" firstAttribute="bottom" secondItem="nCR-w8-Z4y" secondAttribute="bottom" constant="10" id="2qT-lh-7Ah"/>
                             <constraint firstItem="yfN-a6-YM4" firstAttribute="trailing" secondItem="LT8-Ja-0JG" secondAttribute="trailing" constant="8" id="4Dw-f8-Rlk"/>
                             <constraint firstItem="Ajp-lP-xNY" firstAttribute="leading" secondItem="yfN-a6-YM4" secondAttribute="leading" constant="8" id="6TD-ak-Tui"/>
                             <constraint firstItem="jkB-e8-Pil" firstAttribute="leading" secondItem="yfN-a6-YM4" secondAttribute="leading" id="C1r-Nv-U0z"/>
                             <constraint firstItem="jkB-e8-Pil" firstAttribute="top" secondItem="LT8-Ja-0JG" secondAttribute="top" constant="-10" id="C3B-vC-XNI"/>
                             <constraint firstItem="yfN-a6-YM4" firstAttribute="trailing" secondItem="Ei5-vH-ls5" secondAttribute="trailing" constant="10" id="GCQ-LK-Odc"/>
+                            <constraint firstItem="hyY-BS-AJW" firstAttribute="leading" secondItem="yfN-a6-YM4" secondAttribute="leading" id="H9f-KD-CTc"/>
                             <constraint firstItem="hyY-BS-AJW" firstAttribute="top" secondItem="jkB-e8-Pil" secondAttribute="bottom" constant="8" id="HM1-w4-6c5"/>
                             <constraint firstItem="yfN-a6-YM4" firstAttribute="trailing" secondItem="jkB-e8-Pil" secondAttribute="trailing" id="HUK-hq-cQs"/>
                             <constraint firstItem="yfN-a6-YM4" firstAttribute="trailing" secondItem="kTZ-S0-V98" secondAttribute="trailing" id="NSJ-cc-mbA"/>
@@ -363,7 +373,8 @@
                             <constraint firstItem="LT8-Ja-0JG" firstAttribute="top" secondItem="kTZ-S0-V98" secondAttribute="bottom" constant="18" id="Yoz-YN-9mr"/>
                             <constraint firstItem="yfN-a6-YM4" firstAttribute="trailing" secondItem="a2R-Bh-9lk" secondAttribute="trailing" id="ZPy-PD-gFZ"/>
                             <constraint firstItem="a2R-Bh-9lk" firstAttribute="leading" secondItem="BAn-Cd-xdi" secondAttribute="leading" id="aqC-0Z-FmM"/>
-                            <constraint firstItem="t3n-4J-DgT" firstAttribute="top" secondItem="hyY-BS-AJW" secondAttribute="bottom" constant="10" id="f2h-DK-kDj"/>
+                            <constraint firstItem="agl-Sz-Kx6" firstAttribute="leading" secondItem="hyY-BS-AJW" secondAttribute="leading" constant="8" id="ecA-gU-J6F"/>
+                            <constraint firstItem="t3n-4J-DgT" firstAttribute="top" secondItem="hyY-BS-AJW" secondAttribute="bottom" id="f2h-DK-kDj"/>
                             <constraint firstItem="Ajp-lP-xNY" firstAttribute="top" secondItem="Ei5-vH-ls5" secondAttribute="bottom" constant="8" id="hGO-rN-lfD"/>
                             <constraint firstItem="Ei5-vH-ls5" firstAttribute="leading" secondItem="yfN-a6-YM4" secondAttribute="leading" constant="10" id="iIt-G3-L0o"/>
                             <constraint firstItem="nCR-w8-Z4y" firstAttribute="centerY" secondItem="Ajp-lP-xNY" secondAttribute="centerY" id="iJZ-ZZ-hUb"/>
@@ -372,7 +383,7 @@
                             <constraint firstItem="yfN-a6-YM4" firstAttribute="trailing" secondItem="t3n-4J-DgT" secondAttribute="trailing" id="pNa-S5-rQE"/>
                             <constraint firstItem="Ei5-vH-ls5" firstAttribute="top" secondItem="LT8-Ja-0JG" secondAttribute="bottom" constant="8" id="qQA-BC-hsX"/>
                             <constraint firstItem="kTZ-S0-V98" firstAttribute="leading" secondItem="yfN-a6-YM4" secondAttribute="leading" id="smW-3a-Wfa"/>
-                            <constraint firstItem="yfN-a6-YM4" firstAttribute="trailing" secondItem="hyY-BS-AJW" secondAttribute="trailing" constant="8" id="vjG-XE-Xm6"/>
+                            <constraint firstItem="yfN-a6-YM4" firstAttribute="trailing" secondItem="hyY-BS-AJW" secondAttribute="trailing" id="vjG-XE-Xm6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yfN-a6-YM4"/>
                     </view>
@@ -412,5 +423,6 @@
     <resources>
         <image name="close" width="24" height="24"/>
         <image name="loading" width="128" height="128"/>
+        <image name="right-chevron" width="16" height="16"/>
     </resources>
 </document>

@@ -13,7 +13,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShopTypeViewController" customModule="SearchFilter" customModuleProvider="target">
             <connections>
                 <outlet property="categoryList" destination="xwr-9u-m5H" id="BoN-81-oGE"/>
-                <outlet property="resetTapped" destination="Xi7-Gr-rWC" id="E4I-qz-H1R"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -48,6 +47,9 @@
                             <state key="normal" title="Reset">
                                 <color key="titleColor" red="0.23463272739999999" green="0.590398953" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="resetTapped:" destination="-1" eventType="touchUpInside" id="nZ6-EZ-asV"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
